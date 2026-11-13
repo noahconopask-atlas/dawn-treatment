@@ -608,7 +608,7 @@ footer{padding:40px 20px 70px;text-align:center}
   try{ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; }catch(e){}
   var marks=[].slice.call(document.querySelectorAll('img.d'));
   var items=marks.map(function(el,i){
-    return {el:el, host:el.parentElement, k:0.05+(i%3)*0.025};
+    return {el:el, host:el.parentElement, k:0.08+(i%3)*0.035};
   });
   var body=document.body, ticking=false;
   function update(){
@@ -618,10 +618,10 @@ footer{padding:40px 20px 70px;text-align:center}
       var it=items[i], r=it.host.getBoundingClientRect();
       if(r.bottom<-vh || r.top>vh*2) continue;
       var off=(mid-(r.top+r.height/2))*it.k;
-      if(off>70) off=70; else if(off<-70) off=-70;
+      if(off>110) off=110; else if(off<-110) off=-110;
       it.el.style.translate='0 '+off.toFixed(1)+'px';
     }
-    body.style.backgroundPosition='0 '+(window.scrollY*0.12).toFixed(1)+'px';
+    body.style.backgroundPosition='0 '+(window.scrollY*0.18).toFixed(1)+'px';
   }
   function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
   window.addEventListener('scroll',onScroll,{passive:true});
