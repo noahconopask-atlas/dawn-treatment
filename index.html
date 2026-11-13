@@ -8,7 +8,7 @@
 <title>DAWN Director's Treatment</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Unbounded:wght@800;900&family=Permanent+Marker&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Sorts+Mill+Goudy:ital@0;1&family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Unbounded:wght@800;900&display=swap" rel="stylesheet">
 <style>
 /* Layout idea: one dark column of "pages" stacked vertically, each a spread from the book.
    Typewriter for story, mono for craft notes, eroded wide display for section names, tape and torn paper as punctuation. */
@@ -19,12 +19,12 @@
   --bone:#e6e0d2;         /* typewriter text */
   --dim:#8d8b82;          /* secondary text */
   --tape:#b9b6ad;         /* duct tape / paper */
-  --blood:#b3261e;        /* the one red */
+  --blood:#b8302a;        /* the one red */
   --mint:#a9e3cf;         /* character names */
-  --type: "Courier Prime","Courier New",Courier,monospace;
+  --type: "Cutive Mono","Courier New",Courier,monospace;
+  --serif: "Sorts Mill Goudy","Goudy Old Style",Garamond,Georgia,serif;
   --mono: "Roboto Mono",ui-monospace,Menlo,Consolas,monospace;
   --display: "Unbounded","Arial Black",Impact,sans-serif;
-  --hand: "Permanent Marker","Comic Sans MS",cursive;
   --measure: 62ch;
 }
 *{box-sizing:border-box}
@@ -32,7 +32,7 @@ html{scroll-behavior:smooth;background:var(--ink)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{
   margin:0;background:var(--ink);color:var(--bone);
-  font-family:var(--type);font-size:17px;line-height:1.65;
+  font-family:var(--type);font-size:18px;line-height:1.7;
   -webkit-font-smoothing:antialiased;overflow-x:hidden;
 }
 a{color:inherit}
@@ -68,7 +68,7 @@ nav a:hover{color:var(--bone)}
   font-size:clamp(30px,6.2vw,74px);text-wrap:balance}
 .display.sm{font-size:clamp(14px,2.1vw,23px)}
 .display.mint{color:var(--mint)}
-.mono{font-family:var(--mono);font-size:15px;line-height:1.7}
+.mono{font-family:var(--type);font-size:17px;line-height:1.7}
 .big{font-size:clamp(19px,2.3vw,24px);line-height:1.5}
 .red{color:var(--blood)}
 .stack{display:grid;gap:18px}
@@ -76,7 +76,7 @@ nav a:hover{color:var(--bone)}
 /* plain text blocks */
 .tape{display:block}
 .tape.label{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;line-height:1.7;color:var(--dim)}
-.tape.shout{font-family:var(--type);font-size:clamp(22px,3.6vw,38px);line-height:1.35}
+.tape.shout{}
 .paper{padding:0}
 .todo{font-family:var(--mono);font-size:.82em;background:rgba(179,38,30,.16);border:1px dashed var(--blood);color:#f0c9c5;padding:1px 7px;white-space:normal}
 
@@ -116,6 +116,8 @@ dd{margin:0}
 .th{margin:0;line-height:0;font-size:0}
 .ti{display:block;height:auto;max-width:100%}
 .inner.center .ti{margin:0 auto}
+.key{font-family:var(--serif);color:var(--blood);font-size:clamp(26px,3.6vw,42px);line-height:1.28;letter-spacing:.005em;text-wrap:balance}
+.key u{text-decoration-thickness:1px;text-underline-offset:.12em}
 footer{padding:40px 20px 70px;text-align:center}
 </style>
 </head>
@@ -153,7 +155,7 @@ footer{padding:40px 20px 70px;text-align:center}
 <!-- 2. EPIGRAPH -->
 <section class="page">
   <div class="inner center">
-    <p class="big">The monster was not born in her.<br>It was put there.</p>
+    <p class="key">The monster was not born in her.<br>It was put there.</p>
     <p class="fine">Images and references are for tone only and do not indicate cast or crew attachments.</p>
   </div>
 </section>
@@ -162,7 +164,7 @@ footer{padding:40px 20px 70px;text-align:center}
 <section class="page">
   <div class="inner">
     <p class="eyebrow">Logline</p>
-    <p class="big" style="max-width:38ch">After a drugged assault ends in a killing she can't remember, a drifting 26-year-old is hunted by her attackers' friends and by a dying detective, while the thing her childhood put inside her keeps getting out.</p>
+    <p class="key" style="max-width:30ch">After a drugged assault ends in a killing she can't remember, a drifting 26-year-old is hunted by her attackers' friends and by a dying detective, while the thing her childhood put inside her keeps getting out.</p>
   </div>
 </section>
 
@@ -219,7 +221,7 @@ footer{padding:40px 20px 70px;text-align:center}
 <!-- 8. TAPE LINE -->
 <section class="page">
   <div class="inner right">
-    <div class="tape shout">Nobody survives their childhood intact.<br>Some of us survive it <u>twice</u>.</div>
+    <div class="tape shout key">Nobody survives their childhood intact.<br>Some of us survive it <u>twice</u>.</div>
   </div>
 </section>
 
