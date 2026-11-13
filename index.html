@@ -131,6 +131,13 @@ body{background:#000 url("textures/paper-grain-seamless.webp") repeat 0 0 / 960p
 .act>.d,.paper>.d{z-index:0}
 .act>.stack,.act>.num,.paper>*:not(.d){position:relative;z-index:1}
 @media (max-width:760px){.d.m{display:none}}
+/* reference frames: same layer as the textures, feathered into the black */
+.ref{opacity:.85;filter:saturate(.85) brightness(.92);-webkit-mask-image:radial-gradient(ellipse 72% 70% at 50% 50%,#000 38%,transparent 100%);mask-image:radial-gradient(ellipse 72% 70% at 50% 50%,#000 38%,transparent 100%)}
+.ref.r{-webkit-mask-image:radial-gradient(ellipse 75% 72% at 62% 50%,#000 36%,transparent 100%);mask-image:radial-gradient(ellipse 75% 72% at 62% 50%,#000 36%,transparent 100%)}
+.ref.l{-webkit-mask-image:radial-gradient(ellipse 75% 72% at 38% 50%,#000 36%,transparent 100%);mask-image:radial-gradient(ellipse 75% 72% at 38% 50%,#000 36%,transparent 100%)}
+.bleed{position:relative;z-index:0;width:100vw;left:50%;margin:clamp(40px,6vw,80px) 0 0 -50vw;pointer-events:none}
+.bleed-img{position:relative!important;display:block;width:100%;opacity:.9;-webkit-mask-image:radial-gradient(ellipse 62% 58% at 50% 50%,#000 45%,transparent 100%);mask-image:radial-gradient(ellipse 62% 58% at 50% 50%,#000 45%,transparent 100%)}
+@media (max-width:900px){.ref.r,.ref.l{left:0!important;right:auto!important;top:0!important;bottom:auto!important;width:100%!important;opacity:.35}.ref.m{display:none}}
 footer{padding:40px 20px 70px;text-align:center}
 </style>
 </head>
@@ -142,7 +149,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 1. COVER -->
 <header class="page cover" id="top">
-  <div class="decor" aria-hidden="true"><img class="d" src="textures/underwater-silver.webp" alt="" loading="lazy" decoding="async" width="714" height="307" style="right:2%;top:14%;width:min(62vw,714px);opacity:.6"><img class="d" src="textures/folded-silver-tape.webp" alt="" loading="lazy" decoding="async" width="287" height="139" style="right:4%;top:-14px;width:min(30vw,210px);transform:rotate(5deg)"><img class="d m" src="textures/cover-silver-tab.webp" alt="" loading="lazy" decoding="async" width="109" height="91" style="left:6px;bottom:26%;width:70px;transform:rotate(-10deg)"></div>
+  <div class="decor" aria-hidden="true"><img class="d ref r" src="refs/769ace9d.webp" alt="" loading="lazy" decoding="async" width="1100" height="619" style="right:-6vw;top:0;width:min(78vw,1080px);opacity:.5"><img class="d" src="textures/underwater-silver.webp" alt="" loading="lazy" decoding="async" width="714" height="307" style="right:2%;top:14%;width:min(62vw,714px);opacity:.6"><img class="d" src="textures/folded-silver-tape.webp" alt="" loading="lazy" decoding="async" width="287" height="139" style="right:4%;top:-14px;width:min(30vw,210px);transform:rotate(5deg)"><img class="d m" src="textures/cover-silver-tab.webp" alt="" loading="lazy" decoding="async" width="109" height="91" style="left:6px;bottom:26%;width:70px;transform:rotate(-10deg)"></div>
   <div class="inner right">
     <p class="eyebrow" style="text-align:right">Director's Treatment</p>
     <h1 class="th" style="width:100%;max-width:none"><img class="ti" src="titles/dawn-title.png" alt="DAWN" style="width:min(100%,560px);margin-left:auto"></h1>
@@ -252,38 +259,38 @@ footer{padding:40px 20px 70px;text-align:center}
   <div class="inner" style="gap:54px">
     <h2 class="th"><img class="ti" src="titles/synopsis-red.png" alt="Synopsis" style="width:min(100%,384px)"></h2>
 
-    <div class="act"><div class="num">I</div><div class="stack">
+    <div class="act"><img class="d ref r" src="refs/2c32c9d0.webp" alt="" loading="lazy" decoding="async" width="1100" height="619" style="right:-10vw;top:-20px;width:clamp(280px,34vw,560px)"><div class="num">I</div><div class="stack">
       <p>Twenty-six and drifting, Dawn is at King of the Hammers, a desert race where thousands party among neon dune buggies. Three predators pull her away from the crowd: OxyGod, Cy, and Honey. They drug her, take her phone, and start recording.</p>
       <p>Mid-assault, something in Dawn fractures. She kills OxyGod with a violence she barely remembers committing. She comes to at a bus station sink, scrubbing blood off her hands, and vomits up his ringed finger. Not again.</p>
     </div></div>
 
-    <div class="act"><div class="num">II</div><div class="stack">
+    <div class="act"><img class="d ref r" src="refs/2682744e.webp" alt="" loading="lazy" decoding="async" width="1100" height="595" style="right:-10vw;top:0;width:clamp(280px,34vw,560px)"><div class="num">II</div><div class="stack">
       <p>Detective Nez works the scene. Terminally ill, with months left, he has spent his career tracking a pattern of impossible killings stretching back decades.</p>
       <p>Dawn tries to build a life on top of what she did. She works at a rest home caring for Iris, the closest thing she has to a mother. She goes back to Grayson, her ex, newly sober. For the first time, they say they love each other. But she left the desert with the wrong phone, and Cy and Honey want it back.</p>
     </div></div>
 
-    <div class="act"><img class="d m" src="textures/amber-sparks.webp" alt="" loading="lazy" decoding="async" width="397" height="275" style="right:-3%;top:-20px;width:min(21vw,280px)"><div class="num">III</div><div class="stack">
+    <div class="act"><img class="d ref r" src="refs/bad2f2d4.webp" alt="" loading="lazy" decoding="async" width="1100" height="592" style="right:-10vw;top:-10px;width:clamp(280px,34vw,560px)"><img class="d m" src="textures/amber-sparks.webp" alt="" loading="lazy" decoding="async" width="397" height="275" style="right:-3%;top:-20px;width:min(21vw,280px)"><div class="num">III</div><div class="stack">
       <p>Dawn reaches for something normal. She applies for jobs at the mall, and the attempt only sharpens her alienation.</p>
       <p>She trades in Honey's phone at a store there. Cy and Honey track it and murder the clerk who took it. Dawn spots them and stays out of sight.</p>
       <p>They pull a fire alarm, plunge the mall into chaos, and ransack their way out. Nez races to the scene. Dawn barely slips away. Cy and Honey vanish. Nez closes in, step by step.</p>
     </div></div>
 
-    <div class="act"><img class="d" src="textures/ash-and-fiber.webp" alt="" loading="lazy" decoding="async" width="1713" height="59" style="left:-6%;bottom:-40px;width:112%;opacity:.95"><div class="num">IV</div><div class="stack">
+    <div class="act"><img class="d ref r" src="refs/f16e2ee6.webp" alt="" loading="lazy" decoding="async" width="1100" height="596" style="right:-5vw;top:-40px;width:clamp(240px,28vw,460px)"><img class="d ref r m" src="refs/e9411fa4.webp" alt="" loading="lazy" decoding="async" width="1100" height="619" style="right:-13vw;bottom:-80px;width:clamp(240px,28vw,460px)"><img class="d" src="textures/ash-and-fiber.webp" alt="" loading="lazy" decoding="async" width="1713" height="59" style="left:-6%;bottom:-40px;width:112%;opacity:.95"><div class="num">IV</div><div class="stack">
       <p>Cy and Honey connect Dawn to Iris. Iris stalls them with tea, a cigarette, and a story about the daughter she abandoned, buying Dawn time. They kill her for it.</p>
       <p>Dawn is arrested at the murder scene. Cy and Honey abduct Grayson in his own truck and kill him minutes later. In the interrogation room, Dawn's reflection stops matching her, and Shade speaks in the voices of everyone who broke her, ending with her father's: "Why do you think your mother left."</p>
     </div></div>
 
-    <div class="act"><img class="d m" src="textures/oil-slick.webp" alt="" loading="lazy" decoding="async" width="464" height="216" style="right:-4%;top:-30px;width:min(26vw,340px);opacity:.55"><img class="d m" src="textures/charred-corner.webp" alt="" loading="lazy" decoding="async" width="523" height="599" style="right:6%;top:-20px;width:min(16vw,190px);transform:rotate(-8deg)"><div class="num">V</div><div class="stack">
+    <div class="act"><img class="d ref r" src="refs/76a97acf.webp" alt="" loading="lazy" decoding="async" width="1100" height="467" style="right:-10vw;top:-10px;width:clamp(280px,34vw,560px)"><div class="num">V</div><div class="stack">
       <p>A DNA report lands on Nez's desk. Iris was Dawn's mother, and Iris was the killer he has hunted for decades. He goes to the evidence locker and takes one thing from her possessions: a single black puzzle piece.</p>
       <p>Downstairs, Cy walks into the station and posts Dawn's bail in cash, peeling off a bill with blood on it.</p>
     </div></div>
 
-    <div class="act"><img class="d m" src="textures/interrupted-desert-tear.webp" alt="" loading="lazy" decoding="async" width="351" height="814" style="right:4%;top:10%;width:180px;opacity:.95"><div class="num">VI</div><div class="stack">
+    <div class="act"><img class="d ref r" src="refs/21104d7a.webp" alt="" loading="lazy" decoding="async" width="1100" height="453" style="right:-10vw;top:0;width:clamp(280px,34vw,560px)"><img class="d m" src="textures/interrupted-desert-tear.webp" alt="" loading="lazy" decoding="async" width="351" height="814" style="right:4%;top:10%;width:180px;opacity:.95"><div class="num">VI</div><div class="stack">
       <p>Nez reaches the parking lot too late. Cy and Honey drive Dawn into the desert, to a bunker beneath their trailer where a camera and a green screen are already set up. They tie her to a table.</p>
       <p>Then Shade rises. The screams disappear into empty country, heard by nobody.</p>
     </div></div>
 
-    <div class="act"><img class="d m" src="textures/blue-black-streaks.webp" alt="" loading="lazy" decoding="async" width="170" height="643" style="right:4%;top:-30px;width:120px"><div class="num">VII</div><div class="stack">
+    <div class="act"><img class="d ref r" src="refs/027a52db.webp" alt="" loading="lazy" decoding="async" width="1100" height="619" style="right:-10vw;top:-20px;width:clamp(280px,32vw,520px)"><img class="d m" src="textures/blue-black-streaks.webp" alt="" loading="lazy" decoding="async" width="170" height="643" style="right:4%;top:-30px;width:120px"><div class="num">VII</div><div class="stack">
       <p>Nez descends into the bunker. No light. From somewhere in the dark: groans, whimpers, voices that don't sound human anymore. The wet sounds of something still happening.</p>
       <p>He finds what is left of Cy and Honey. Then he finds her. Snarling, weeping, shattered. Something between an animal and a girl.</p>
       <p>He holsters his gun and walks toward her.</p>
@@ -300,6 +307,8 @@ footer{padding:40px 20px 70px;text-align:center}
       <p>She throws her phone away and puts her thumb out on the desert highway. A truck stops and the driver asks where she is going. Dawn considers.</p>
     </div></div>
   </div>
+
+  <figure class="bleed" aria-hidden="true"><img class="d ref bleed-img" src="refs/ff442ef3.webp" alt="" loading="lazy" decoding="async" width="1800" height="818"></figure>
 </section>
 
 <!-- 10. CHARACTER WEB -->
@@ -318,7 +327,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 11. DAWN -->
 <section class="page">
-  <div class="decor" aria-hidden="true"><img class="d m" src="textures/split-at-the-fold.webp" alt="" loading="lazy" decoding="async" width="128" height="411" style="left:6%;top:16%;width:110px;opacity:.95"><img class="d m" src="textures/pinholes.webp" alt="" loading="lazy" decoding="async" width="470" height="370" style="left:3%;bottom:6%;width:min(30vw,380px);opacity:.85"></div>
+  <div class="decor" aria-hidden="true"><img class="d ref l" src="refs/fa8a8868.webp" alt="" loading="lazy" decoding="async" width="1100" height="918" style="left:-4vw;top:6%;width:clamp(320px,40vw,640px)"><img class="d m" src="textures/split-at-the-fold.webp" alt="" loading="lazy" decoding="async" width="128" height="411" style="left:6%;top:16%;width:110px;opacity:.95"><img class="d m" src="textures/pinholes.webp" alt="" loading="lazy" decoding="async" width="470" height="370" style="left:3%;bottom:6%;width:min(30vw,380px);opacity:.85"></div>
   <div class="inner right">
     <div class="char">
       <h3 class="th"><img class="ti" src="titles/dawn-red.png" alt="Dawn" style="width:min(100%,234px)"></h3>
@@ -340,7 +349,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 13. SHADE IS NOT A CREATURE -->
 <section class="page">
-  <div class="decor" aria-hidden="true"><img class="d m" src="textures/broken-emulsion.webp" alt="" loading="lazy" decoding="async" width="598" height="332" style="right:-3%;top:4%;width:min(28vw,400px);opacity:.7"><img class="d m" src="textures/torn-collage-spine.webp" alt="" loading="lazy" decoding="async" width="173" height="818" style="right:7%;top:30%;width:120px;opacity:.95"></div>
+  <div class="decor" aria-hidden="true"><img class="d ref r" src="refs/39a1979b.webp" alt="" loading="lazy" decoding="async" width="1086" height="1448" style="right:-2vw;top:2%;width:clamp(220px,22vw,380px)"><img class="d ref r m" src="refs/9c57546c.webp" alt="" loading="lazy" decoding="async" width="1100" height="733" style="right:6vw;top:24%;width:clamp(260px,28vw,480px)"><img class="d ref r m" src="refs/4b70f30d.webp" alt="" loading="lazy" decoding="async" width="1086" height="1448" style="right:-1vw;top:44%;width:clamp(220px,22vw,380px)"><img class="d ref r m" src="refs/86943c6e.webp" alt="" loading="lazy" decoding="async" width="1100" height="619" style="right:5vw;top:70%;width:clamp(260px,30vw,500px)"><img class="d m" src="textures/broken-emulsion.webp" alt="" loading="lazy" decoding="async" width="598" height="332" style="right:-3%;top:4%;width:min(28vw,400px);opacity:.7"><img class="d m" src="textures/torn-collage-spine.webp" alt="" loading="lazy" decoding="async" width="173" height="818" style="right:7%;top:30%;width:120px;opacity:.95"></div>
   <div class="inner">
     <p class="key">Shade is not a creature.<br>She is a frequency.</p>
     <div class="stack" style="font-size:16px">
@@ -358,7 +367,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 14. NEZ -->
 <section class="page">
-  <div class="decor" aria-hidden="true"><img class="d m" src="textures/evidence-tape-tab.webp" alt="" loading="lazy" decoding="async" width="115" height="95" style="left:calc(clamp(20px,7vw,110px) + min(46vw,600px));top:calc(clamp(48px,7vw,96px) - 22px);width:92px;transform:rotate(14deg)"><img class="d" src="textures/tarnished-ink.webp" alt="" loading="lazy" decoding="async" width="1648" height="76" style="left:0;bottom:0;width:100%;transform:translateY(50%);opacity:.95"></div>
+  <div class="decor" aria-hidden="true"><img class="d ref r" src="refs/8f2fded3.webp" alt="" loading="lazy" decoding="async" width="1100" height="460" style="right:-4vw;top:6%;width:clamp(320px,42vw,680px)"><img class="d m" src="textures/evidence-tape-tab.webp" alt="" loading="lazy" decoding="async" width="115" height="95" style="left:calc(clamp(20px,7vw,110px) + min(46vw,600px));top:calc(clamp(48px,7vw,96px) - 22px);width:92px;transform:rotate(14deg)"><img class="d" src="textures/tarnished-ink.webp" alt="" loading="lazy" decoding="async" width="1648" height="76" style="left:0;bottom:0;width:100%;transform:translateY(50%);opacity:.95"></div>
   <div class="inner">
     <div class="char">
       <h3 class="th"><img class="ti" src="titles/detective-nez-red.png" alt="Detective Nez" style="width:min(100%,592px)"></h3>
@@ -370,7 +379,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 15. CY + HONEY -->
 <section class="page">
-  <div class="decor" aria-hidden="true"><img class="d m" src="textures/black-cloth-tab.webp" alt="" loading="lazy" decoding="async" width="373" height="143" style="left:4%;top:18%;width:min(28vw,320px);transform:rotate(-7deg)"><img class="d m" src="textures/edge-dust.webp" alt="" loading="lazy" decoding="async" width="525" height="277" style="left:2%;bottom:4%;width:min(36vw,500px);opacity:.9"></div>
+  <div class="decor" aria-hidden="true"><img class="d ref l" src="refs/42ba2dc9.webp" alt="" loading="lazy" decoding="async" width="1100" height="618" style="left:-4vw;top:6%;width:clamp(320px,40vw,640px)"><img class="d m" src="textures/black-cloth-tab.webp" alt="" loading="lazy" decoding="async" width="373" height="143" style="left:4%;top:18%;width:min(28vw,320px);transform:rotate(-7deg)"><img class="d m" src="textures/edge-dust.webp" alt="" loading="lazy" decoding="async" width="525" height="277" style="left:2%;bottom:4%;width:min(36vw,500px);opacity:.9"></div>
   <div class="inner right">
     <div class="char">
       <h3 class="th"><img class="ti" src="titles/cy-and-honey-red.png" alt="Cy + Honey" style="width:min(100%,434px)"></h3>
@@ -386,7 +395,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 16. IRIS -->
 <section class="page">
-  <div class="decor" aria-hidden="true"><img class="d m" src="textures/silver-frame-patch.webp" alt="" loading="lazy" decoding="async" width="215" height="140" style="right:calc(10% + 120px);top:calc(16% - 30px);width:min(15vw,180px);transform:rotate(-9deg)"></div>
+  <div class="decor" aria-hidden="true"><img class="d ref r" src="refs/848e4f94.webp" alt="" loading="lazy" decoding="async" width="1100" height="551" style="right:-2vw;top:10%;width:clamp(320px,40vw,620px)"><img class="d m" src="textures/silver-frame-patch.webp" alt="" loading="lazy" decoding="async" width="215" height="140" style="right:calc(10% + 120px);top:calc(16% - 30px);width:min(15vw,180px);transform:rotate(-9deg)"></div>
   <div class="inner">
     <div class="char">
       <h3 class="th"><img class="ti" src="titles/iris-red.png" alt="Iris" style="width:min(100%,143px)"></h3>
@@ -399,7 +408,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 17. GRAYSON -->
 <section class="page">
-  <div class="decor" aria-hidden="true"><img class="d m" src="textures/dry-wall-dust.webp" alt="" loading="lazy" decoding="async" width="439" height="295" style="right:4%;top:10%;width:min(36vw,440px)"></div>
+  <div class="decor" aria-hidden="true"><img class="d ref r" src="refs/6183dc88.webp" alt="" loading="lazy" decoding="async" width="1100" height="550" style="right:-4vw;top:6%;width:clamp(320px,42vw,680px)"><img class="d m" src="textures/dry-wall-dust.webp" alt="" loading="lazy" decoding="async" width="439" height="295" style="right:4%;top:10%;width:min(36vw,440px)"></div>
   <div class="inner">
     <div class="char">
       <h3 class="th"><img class="ti" src="titles/grayson-red.png" alt="Grayson" style="width:min(100%,363px)"></h3>
@@ -454,7 +463,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 21. THE WORLD -->
 <section class="page">
-  <div class="decor" aria-hidden="true"><img class="d" src="textures/broken-horizontal-join.webp" alt="" loading="lazy" decoding="async" width="1924" height="189" style="left:0;top:0;width:100%;transform:translateY(-50%);opacity:.95"><img class="d m" src="textures/edge-dust.webp" alt="" loading="lazy" decoding="async" width="525" height="277" style="left:3%;bottom:10%;width:min(34vw,460px);opacity:.85;transform:scaleX(-1) rotate(4deg)"></div>
+  <div class="decor" aria-hidden="true"><img class="d ref l" src="refs/e3ab2250.webp" alt="" loading="lazy" decoding="async" width="1100" height="463" style="left:-4vw;top:0;width:clamp(300px,36vw,560px)"><img class="d ref l m" src="refs/c40c3c00.webp" alt="" loading="lazy" decoding="async" width="1100" height="458" style="left:-2vw;bottom:2%;width:clamp(300px,40vw,640px)"><img class="d" src="textures/broken-horizontal-join.webp" alt="" loading="lazy" decoding="async" width="1924" height="189" style="left:0;top:0;width:100%;transform:translateY(-50%);opacity:.95"><img class="d m" src="textures/edge-dust.webp" alt="" loading="lazy" decoding="async" width="525" height="277" style="left:3%;bottom:10%;width:min(34vw,460px);opacity:.85;transform:scaleX(-1) rotate(4deg)"></div>
   <div class="inner right">
     <div class="stack mono">
       <p>The city in Dawn is an anonymous sprawl, industrial and worn, built from concrete, rust, and asphalt. Every surface feels stained, every corner carrying the residue of lives pressed too close together.</p>
@@ -488,6 +497,8 @@ footer{padding:40px 20px 70px;text-align:center}
       <p><span class="todo">XX</span> shooting days. <span class="todo">Region</span>. Budget range <span class="todo">X</span> to <span class="todo">X</span>.</p>
     </div>
   </div>
+
+  <figure class="bleed" aria-hidden="true"><img class="d ref bleed-img" src="refs/921a8454.webp" alt="" loading="lazy" decoding="async" width="1800" height="1200"></figure>
 </section>
 
 <!-- 24. COMPS -->
