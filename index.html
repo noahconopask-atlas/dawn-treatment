@@ -603,25 +603,24 @@ footer{padding:40px 20px 70px;text-align:center}
 </footer>
 
 <script>
-/* Subtle parallax: textures and marks drift slower than the text, so the copy floats above them. */
+/* Subtle parallax: grain and marks move together as one layer, a little slower than the text above them. */
 (function(){
   try{ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; }catch(e){}
   var marks=[].slice.call(document.querySelectorAll('img.d'));
   var items=marks.map(function(el,i){
-    return {el:el, host:el.parentElement, k:0.08+(i%3)*0.035};
+    return {el:el, host:el.parentElement};
   });
-  var body=document.body, ticking=false;
+  var body=document.body, ticking=false, K=0.11;
   function update(){
     ticking=false;
     var vh=window.innerHeight, mid=vh/2;
     for(var i=0;i<items.length;i++){
       var it=items[i], r=it.host.getBoundingClientRect();
       if(r.bottom<-vh || r.top>vh*2) continue;
-      var off=(mid-(r.top+r.height/2))*it.k;
-      if(off>110) off=110; else if(off<-110) off=-110;
+      var off=(mid-(r.top+r.height/2))*K;
       it.el.style.translate='0 '+off.toFixed(1)+'px';
     }
-    body.style.backgroundPosition='0 '+(window.scrollY*0.18).toFixed(1)+'px';
+    body.style.backgroundPosition='0 '+(window.scrollY*K).toFixed(1)+'px';
   }
   function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
   window.addEventListener('scroll',onScroll,{passive:true});
