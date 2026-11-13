@@ -14,8 +14,8 @@
    Typewriter for story, mono for craft notes, eroded wide display for section names, tape and torn paper as punctuation. */
 :root{
   color-scheme: dark;
-  --ink:#070808;          /* page black */
-  --ink-2:#0e1110;        /* raised panel */
+  --ink:#000000;          /* page black */
+  --ink-2:#000000;        /* raised panel */
   --bone:#e6e0d2;         /* typewriter text */
   --dim:#8d8b82;          /* secondary text */
   --tape:#b9b6ad;         /* duct tape / paper */
@@ -28,7 +28,7 @@
   --measure: 62ch;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;background:var(--ink)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{
   margin:0;background:var(--ink);color:var(--bone);
