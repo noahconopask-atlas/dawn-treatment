@@ -138,11 +138,13 @@ body{background:#000 url("textures/paper-grain-seamless.webp") repeat 0 0 / 960p
 .bleed{position:relative;z-index:0;width:100vw;left:50%;margin:clamp(40px,6vw,80px) 0 0 -50vw;pointer-events:none}
 .bleed-img{position:relative!important;display:block;width:100%;opacity:.9;-webkit-mask-image:radial-gradient(ellipse 62% 58% at 50% 50%,#000 45%,transparent 100%);mask-image:radial-gradient(ellipse 62% 58% at 50% 50%,#000 45%,transparent 100%)}
 /* synopsis: text beside one plain column of frames */
-.syn-grid{display:grid;grid-template-columns:minmax(0,1fr) clamp(240px,30vw,440px);gap:clamp(28px,5vw,80px);align-items:start}
+.syn-grid{display:grid;grid-template-columns:minmax(0,1fr) clamp(240px,30vw,440px);gap:clamp(28px,5vw,80px);align-items:stretch}
 .syn-text{display:grid;gap:54px}
-.syn-col{display:grid;gap:12px;position:relative;z-index:1}
-.syn-col img{display:block;width:100%;height:auto}
-@media (max-width:900px){.syn-grid{grid-template-columns:1fr}.ref.r,.ref.l{left:0!important;right:auto!important;top:0!important;bottom:auto!important;width:100%!important;opacity:.35}.ref.m{display:none}}
+.syn-col{display:flex;flex-direction:column;gap:12px;position:relative;z-index:1;min-height:0}
+.syn-col img{display:block;width:100%;flex:1 1 0;min-height:0;height:auto;object-fit:cover}
+/* cast: prints dropped on a table */
+.photo{border:5px solid #e6e0d2;box-shadow:0 14px 30px rgba(0,0,0,.75),0 2px 6px rgba(0,0,0,.6);filter:saturate(.9)}
+@media (max-width:900px){.syn-grid{grid-template-columns:1fr}.syn-col img{flex:none}.photo{left:auto!important;right:-8vw!important;top:0!important;bottom:auto!important;width:60vw!important;opacity:.3}.photo.m{display:none}.ref.r,.ref.l{left:0!important;right:auto!important;top:0!important;bottom:auto!important;width:100%!important;opacity:.35}.ref.m{display:none}}
 footer{padding:40px 20px 70px;text-align:center}
 </style>
 </head>
@@ -312,7 +314,7 @@ footer{padding:40px 20px 70px;text-align:center}
       <p>She throws her phone away and puts her thumb out on the desert highway. A truck stops and the driver asks where she is going. Dawn considers.</p>
     </div></div>
   </div>
-    <aside class="syn-col" aria-hidden="true"><img src="refs/5c74bf7a.webp" alt="" loading="lazy" decoding="async" width="900" height="506"><img src="refs/7dab86e7.webp" alt="" loading="lazy" decoding="async" width="900" height="385"><img src="refs/bad2f2d4.webp" alt="" loading="lazy" decoding="async" width="900" height="485"><img src="refs/2e4f3e62.webp" alt="" loading="lazy" decoding="async" width="900" height="378"><img src="refs/76a97acf.webp" alt="" loading="lazy" decoding="async" width="900" height="382"><img src="refs/e878ed0e.webp" alt="" loading="lazy" decoding="async" width="900" height="383"><img src="refs/6f44325c.webp" alt="" loading="lazy" decoding="async" width="900" height="382"><img src="refs/42ba2dc9.webp" alt="" loading="lazy" decoding="async" width="900" height="505"><img src="refs/027a52db.webp" alt="" loading="lazy" decoding="async" width="900" height="506"></aside></div>
+    <aside class="syn-col" aria-hidden="true"><img src="refs/5c74bf7a.webp" alt="" loading="lazy" decoding="async" width="900" height="506"><img src="refs/2c32c9d0.webp" alt="" loading="lazy" decoding="async" width="900" height="506"><img src="refs/45d5e013.webp" alt="" loading="lazy" decoding="async" width="900" height="445"><img src="refs/7dab86e7.webp" alt="" loading="lazy" decoding="async" width="900" height="385"><img src="refs/04e31283.webp" alt="" loading="lazy" decoding="async" width="900" height="375"><img src="refs/2682744e.webp" alt="" loading="lazy" decoding="async" width="900" height="487"><img src="refs/bad2f2d4.webp" alt="" loading="lazy" decoding="async" width="900" height="485"><img src="refs/2e4f3e62.webp" alt="" loading="lazy" decoding="async" width="900" height="378"><img src="refs/f16e2ee6.webp" alt="" loading="lazy" decoding="async" width="900" height="488"><img src="refs/23453518.webp" alt="" loading="lazy" decoding="async" width="900" height="377"><img src="refs/e9411fa4.webp" alt="" loading="lazy" decoding="async" width="900" height="506"><img src="refs/76a97acf.webp" alt="" loading="lazy" decoding="async" width="900" height="382"><img src="refs/e878ed0e.webp" alt="" loading="lazy" decoding="async" width="900" height="383"><img src="refs/6f44325c.webp" alt="" loading="lazy" decoding="async" width="900" height="382"><img src="refs/42ba2dc9.webp" alt="" loading="lazy" decoding="async" width="900" height="505"><img src="refs/027a52db.webp" alt="" loading="lazy" decoding="async" width="900" height="506"><img src="refs/18d8cb6a.webp" alt="" loading="lazy" decoding="async" width="900" height="372"><img src="refs/ff442ef3.webp" alt="" loading="lazy" decoding="async" width="900" height="409"></aside></div>
   </div>
 </section>
 
@@ -332,7 +334,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 11. DAWN -->
 <section class="page">
-  <div class="decor" aria-hidden="true"><img class="d ref l" src="refs/42bb3db8.webp" alt="" loading="lazy" decoding="async" width="1100" height="458" style="left:-4vw;top:4%;width:clamp(320px,42vw,680px)"><img class="d m" src="textures/split-at-the-fold.webp" alt="" loading="lazy" decoding="async" width="128" height="411" style="left:6%;top:16%;width:110px;opacity:.95"><img class="d m" src="textures/pinholes.webp" alt="" loading="lazy" decoding="async" width="470" height="370" style="left:3%;bottom:6%;width:min(30vw,380px);opacity:.85"></div>
+  <div class="decor" aria-hidden="true"><img class="d photo" src="refs/42bb3db8.webp" alt="" loading="lazy" decoding="async" width="1100" height="458" style="left:3vw;top:8%;width:clamp(240px,30vw,420px);transform:rotate(-3.2deg)"><img class="d m" src="textures/split-at-the-fold.webp" alt="" loading="lazy" decoding="async" width="128" height="411" style="left:6%;top:16%;width:110px;opacity:.95"><img class="d m" src="textures/pinholes.webp" alt="" loading="lazy" decoding="async" width="470" height="370" style="left:3%;bottom:6%;width:min(30vw,380px);opacity:.85"></div>
   <div class="inner right">
     <div class="char">
       <h3 class="th"><img class="ti" src="titles/dawn-red.png" alt="Dawn" style="width:min(100%,234px)"></h3>
@@ -372,7 +374,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 14. NEZ -->
 <section class="page">
-  <div class="decor" aria-hidden="true"><img class="d ref l" src="refs/985ef0c8.webp" alt="" loading="lazy" decoding="async" width="1100" height="460" style="left:-4vw;top:8%;width:clamp(320px,40vw,640px)"><img class="d m" src="textures/evidence-tape-tab.webp" alt="" loading="lazy" decoding="async" width="115" height="95" style="left:calc(clamp(20px,7vw,110px) + min(46vw,600px));top:calc(clamp(48px,7vw,96px) - 22px);width:92px;transform:rotate(14deg)"><img class="d" src="textures/tarnished-ink.webp" alt="" loading="lazy" decoding="async" width="1648" height="76" style="left:0;bottom:0;width:100%;transform:translateY(50%);opacity:.95"></div>
+  <div class="decor" aria-hidden="true"><img class="d photo" src="refs/985ef0c8.webp" alt="" loading="lazy" decoding="async" width="1100" height="460" style="right:3vw;top:12%;width:clamp(240px,30vw,420px);transform:rotate(2.4deg)"><img class="d m" src="textures/evidence-tape-tab.webp" alt="" loading="lazy" decoding="async" width="115" height="95" style="left:calc(clamp(20px,7vw,110px) + min(46vw,600px));top:calc(clamp(48px,7vw,96px) - 22px);width:92px;transform:rotate(14deg)"><img class="d" src="textures/tarnished-ink.webp" alt="" loading="lazy" decoding="async" width="1648" height="76" style="left:0;bottom:0;width:100%;transform:translateY(50%);opacity:.95"></div>
   <div class="inner">
     <div class="char">
       <h3 class="th"><img class="ti" src="titles/detective-nez-red.png" alt="Detective Nez" style="width:min(100%,592px)"></h3>
@@ -384,7 +386,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 15. CY + HONEY -->
 <section class="page">
-  <div class="decor" aria-hidden="true"><img class="d ref r" src="refs/95774da7.webp" alt="" loading="lazy" decoding="async" width="1100" height="595" style="right:-3vw;top:0;width:clamp(280px,34vw,540px)"><img class="d ref r m" src="refs/3609541e.webp" alt="" loading="lazy" decoding="async" width="1100" height="458" style="right:4vw;top:52%;width:clamp(260px,30vw,480px)"><img class="d m" src="textures/black-cloth-tab.webp" alt="" loading="lazy" decoding="async" width="373" height="143" style="left:4%;top:18%;width:min(28vw,320px);transform:rotate(-7deg)"><img class="d m" src="textures/edge-dust.webp" alt="" loading="lazy" decoding="async" width="525" height="277" style="left:2%;bottom:4%;width:min(36vw,500px);opacity:.9"></div>
+  <div class="decor" aria-hidden="true"><img class="d photo" src="refs/95774da7.webp" alt="" loading="lazy" decoding="async" width="1100" height="595" style="left:3vw;top:4%;width:clamp(220px,26vw,380px);transform:rotate(-1.6deg)"><img class="d photo m" src="refs/3609541e.webp" alt="" loading="lazy" decoding="async" width="1100" height="458" style="left:9vw;top:52%;width:clamp(220px,24vw,360px);transform:rotate(3.1deg)"><img class="d m" src="textures/black-cloth-tab.webp" alt="" loading="lazy" decoding="async" width="373" height="143" style="left:4%;top:18%;width:min(28vw,320px);transform:rotate(-7deg)"><img class="d m" src="textures/edge-dust.webp" alt="" loading="lazy" decoding="async" width="525" height="277" style="left:2%;bottom:4%;width:min(36vw,500px);opacity:.9"></div>
   <div class="inner right">
     <div class="char">
       <h3 class="th"><img class="ti" src="titles/cy-and-honey-red.png" alt="Cy + Honey" style="width:min(100%,434px)"></h3>
@@ -400,7 +402,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 16. IRIS -->
 <section class="page">
-  <div class="decor" aria-hidden="true"><img class="d ref r" src="refs/4960fc71.webp" alt="" loading="lazy" decoding="async" width="1100" height="461" style="right:-3vw;top:6%;width:clamp(320px,40vw,640px)"><img class="d m" src="textures/silver-frame-patch.webp" alt="" loading="lazy" decoding="async" width="215" height="140" style="right:calc(10% + 120px);top:calc(16% - 30px);width:min(15vw,180px);transform:rotate(-9deg)"></div>
+  <div class="decor" aria-hidden="true"><img class="d photo" src="refs/4960fc71.webp" alt="" loading="lazy" decoding="async" width="1100" height="461" style="right:4vw;top:10%;width:clamp(240px,30vw,420px);transform:rotate(2.8deg)"><img class="d m" src="textures/silver-frame-patch.webp" alt="" loading="lazy" decoding="async" width="215" height="140" style="right:calc(10% + 120px);top:calc(16% - 30px);width:min(15vw,180px);transform:rotate(-9deg)"></div>
   <div class="inner">
     <div class="char">
       <h3 class="th"><img class="ti" src="titles/iris-red.png" alt="Iris" style="width:min(100%,143px)"></h3>
@@ -413,7 +415,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 17. GRAYSON -->
 <section class="page">
-  <div class="decor" aria-hidden="true"><img class="d ref l" src="refs/a06f4ea8.webp" alt="" loading="lazy" decoding="async" width="1100" height="595" style="left:-4vw;top:6%;width:clamp(320px,40vw,640px)"><img class="d m" src="textures/dry-wall-dust.webp" alt="" loading="lazy" decoding="async" width="439" height="295" style="right:4%;top:10%;width:min(36vw,440px)"></div>
+  <div class="decor" aria-hidden="true"><img class="d photo" src="refs/a06f4ea8.webp" alt="" loading="lazy" decoding="async" width="1100" height="595" style="right:3vw;top:10%;width:clamp(240px,30vw,420px);transform:rotate(-2.5deg)"><img class="d m" src="textures/dry-wall-dust.webp" alt="" loading="lazy" decoding="async" width="439" height="295" style="right:4%;top:10%;width:min(36vw,440px)"></div>
   <div class="inner">
     <div class="char">
       <h3 class="th"><img class="ti" src="titles/grayson-red.png" alt="Grayson" style="width:min(100%,363px)"></h3>
