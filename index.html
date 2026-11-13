@@ -124,6 +124,8 @@ dd{margin:0}
 html{background:#000}
 body{background:#000 url("textures/paper-grain-seamless.webp") repeat 0 0 / 960px 1010px;overflow-x:clip}
 .decor{position:absolute;inset:0;pointer-events:none;z-index:0}
+.d{will-change:translate}
+.inner{text-shadow:0 2px 6px rgba(0,0,0,.65)}
 .d{position:absolute;height:auto;max-width:none;pointer-events:none;user-select:none}
 .act,.paper{position:relative}
 .act>.d,.paper>.d{z-index:0}
@@ -600,5 +602,32 @@ footer{padding:40px 20px 70px;text-align:center}
   <p class="eyebrow" style="max-width:none">Dawn &middot; A film by Noah Conopask &middot; MMXXVI</p>
 </footer>
 
+<script>
+/* Subtle parallax: textures and marks drift slower than the text, so the copy floats above them. */
+(function(){
+  try{ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; }catch(e){}
+  var marks=[].slice.call(document.querySelectorAll('img.d'));
+  var items=marks.map(function(el,i){
+    return {el:el, host:el.parentElement, k:0.05+(i%3)*0.025};
+  });
+  var body=document.body, ticking=false;
+  function update(){
+    ticking=false;
+    var vh=window.innerHeight, mid=vh/2;
+    for(var i=0;i<items.length;i++){
+      var it=items[i], r=it.host.getBoundingClientRect();
+      if(r.bottom<-vh || r.top>vh*2) continue;
+      var off=(mid-(r.top+r.height/2))*it.k;
+      if(off>70) off=70; else if(off<-70) off=-70;
+      it.el.style.translate='0 '+off.toFixed(1)+'px';
+    }
+    body.style.backgroundPosition='0 '+(window.scrollY*0.12).toFixed(1)+'px';
+  }
+  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(update); } }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  update();
+})();
+</script>
 </body>
 </html>
