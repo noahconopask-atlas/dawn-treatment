@@ -28,7 +28,7 @@
   --measure: 62ch;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--ink)}
+html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{
   margin:0;background:var(--ink);color:var(--bone);
@@ -48,14 +48,14 @@ em{font-style:italic}
 @media (max-width:700px){.side{display:none}}
 
 /* top index */
-nav{position:sticky;top:0;z-index:45;background:var(--ink);padding:14px 20px 22px}
+nav{position:relative;z-index:3;padding:14px 20px 22px}
 nav ul{list-style:none;margin:0 auto;padding:0;max-width:1100px;display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:center;
   font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase}
 nav a{text-decoration:none;color:var(--dim);padding:4px 0}
 nav a:hover{color:var(--bone)}
 
 /* pages */
-.page{position:relative;padding:clamp(48px,7vw,96px) clamp(20px,7vw,110px);overflow:hidden}
+.page{position:relative;padding:clamp(48px,7vw,96px) clamp(20px,7vw,110px)}
 .inner{max-width:1100px;margin:0 auto;display:grid;gap:26px;position:relative;z-index:2}
 .inner.right{justify-items:end}
 .inner.right>*{width:100%;max-width:var(--measure)}
@@ -120,6 +120,15 @@ dd{margin:0}
 .key u{text-decoration-thickness:1px;text-underline-offset:.12em}
 .script-link{font-family:var(--serif);color:var(--blood);font-size:clamp(34px,5.5vw,64px);line-height:1.1;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.18em;padding:8px 0}
 .script-link:hover{color:var(--bone)}
+/* textures: one continuous grain on the body; marks sit behind copy */
+html{background:#000}
+body{background:#000 url("textures/paper-grain-seamless.webp") repeat 0 0 / 960px 1010px;overflow-x:clip}
+.decor{position:absolute;inset:0;pointer-events:none;z-index:0}
+.d{position:absolute;height:auto;max-width:none;pointer-events:none;user-select:none}
+.act,.paper{position:relative}
+.act>.d,.paper>.d{z-index:0}
+.act>.stack,.act>.num,.paper>*:not(.d){position:relative;z-index:1}
+@media (max-width:760px){.d.m{display:none}}
 footer{padding:40px 20px 70px;text-align:center}
 </style>
 </head>
@@ -131,6 +140,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 1. COVER -->
 <header class="page cover" id="top">
+  <div class="decor" aria-hidden="true"><img class="d" src="textures/underwater-silver.webp" alt="" loading="lazy" decoding="async" width="714" height="307" style="right:2%;top:14%;width:min(62vw,714px);opacity:.6"><img class="d" src="textures/folded-silver-tape.webp" alt="" loading="lazy" decoding="async" width="287" height="139" style="right:4%;top:-14px;width:min(30vw,210px);transform:rotate(5deg)"><img class="d m" src="textures/cover-silver-tab.webp" alt="" loading="lazy" decoding="async" width="109" height="91" style="left:6px;bottom:26%;width:70px;transform:rotate(-10deg)"></div>
   <div class="inner right">
     <p class="eyebrow" style="text-align:right">Director's Treatment</p>
     <h1 class="th" style="width:100%;max-width:none"><img class="ti" src="titles/dawn-title.png" alt="DAWN" style="width:min(100%,560px);margin-left:auto"></h1>
@@ -157,6 +167,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 2. EPIGRAPH -->
 <section class="page">
+  <div class="decor" aria-hidden="true"><img class="d" src="textures/slate-shadows.webp" alt="" loading="lazy" decoding="async" width="1283" height="155" style="left:50%;top:50%;width:min(100%,1283px);transform:translate(-50%,-50%);opacity:.9"></div>
   <div class="inner center">
     <p class="key">The monster was not born in her.<br>It was put there.</p>
     <p class="fine">Images and references are for tone only and do not indicate cast or crew attachments.</p>
@@ -165,6 +176,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 3. LOGLINE -->
 <section class="page">
+  <div class="decor" aria-hidden="true"><img class="d" src="textures/blue-black-crumple.webp" alt="" loading="lazy" decoding="async" width="1820" height="104" style="left:0;bottom:0;width:100%;transform:translateY(50%);opacity:.9"></div>
   <div class="inner">
     <p class="eyebrow">Logline</p>
     <p class="key" style="max-width:30ch">After a drugged assault ends in a killing she can't remember, a drifting 26-year-old is hunted by her attackers' friends and by a dying detective, while the thing her childhood put inside her keeps getting out.</p>
@@ -173,6 +185,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 4. NOTE FROM THE DIRECTOR -->
 <section class="page">
+  <div class="decor" aria-hidden="true"><img class="d m" src="textures/creased-clear-tape.webp" alt="" loading="lazy" decoding="async" width="270" height="161" style="left:calc(clamp(20px,7vw,110px) + min(58ch,560px));top:calc(clamp(48px,7vw,96px) - 34px);width:150px;transform:rotate(7deg)"><img class="d m" src="textures/black-paper-flecks.webp" alt="" loading="lazy" decoding="async" width="539" height="532" style="right:4%;top:12%;width:min(34vw,460px);opacity:.75"></div>
   <div class="inner">
     <p class="eyebrow">A note from the director</p>
     <div class="stack">
@@ -187,6 +200,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 5. THE FILM -->
 <section class="page" id="film">
+  <div class="decor" aria-hidden="true"><img class="d m" src="textures/oil-slick.webp" alt="" loading="lazy" decoding="async" width="464" height="216" style="right:3%;top:18%;width:min(36vw,440px);opacity:.7"></div>
   <div class="inner">
     <div class="stack big" style="font-size:clamp(18px,2vw,22px)">
       <p><span class="red">Dawn</span> is elevated horror and psychological thriller in one body: a female werewolf story where the full moon is childhood trauma.</p>
@@ -198,6 +212,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 6. INFLUENCES -->
 <section class="page">
+  <div class="decor" aria-hidden="true"><img class="d m" src="textures/oxidized-waterline.webp" alt="" loading="lazy" decoding="async" width="704" height="232" style="left:0;bottom:6%;width:min(52vw,680px);opacity:.85"></div>
   <div class="inner right">
     <div class="stack mono">
       <p>Dawn draws on the atmosphere and unsettling intimacy of <em>Lost Highway</em> and <em>Fire Walk With Me</em>, with the moral tension and precision of an urban western like <em>Heat</em>.</p>
@@ -209,6 +224,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 7. PREMISE -->
 <section class="page">
+  <div class="decor" aria-hidden="true"><img class="d m" src="textures/oxidized-paper.webp" alt="" loading="lazy" decoding="async" width="495" height="509" style="right:5%;top:8%;width:min(34vw,420px);opacity:.55"></div>
   <div class="inner">
     <h2 class="th"><img class="ti" src="titles/premise-red.png" alt="Premise" style="width:min(100%,357px)"></h2>
     <div class="stack">
@@ -223,6 +239,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 8. TAPE LINE -->
 <section class="page">
+  <div class="decor" aria-hidden="true"><img class="d m" src="textures/abrasion-and-tape-transfer.webp" alt="" loading="lazy" decoding="async" width="777" height="245" style="right:2%;top:58%;width:min(30vw,420px);opacity:.85"><img class="d m" src="textures/woven-duct-tape.webp" alt="" loading="lazy" decoding="async" width="340" height="182" style="right:3%;top:6%;width:min(24vw,250px);transform:rotate(-5deg)"></div>
   <div class="inner right">
     <div class="tape shout key">Nobody survives their childhood intact.<br>Some of us survive it <u>twice</u>.</div>
   </div>
@@ -233,7 +250,7 @@ footer{padding:40px 20px 70px;text-align:center}
   <div class="inner" style="gap:54px">
     <h2 class="th"><img class="ti" src="titles/synopsis-red.png" alt="Synopsis" style="width:min(100%,384px)"></h2>
 
-    <div class="act"><div class="num">I</div><div class="stack">
+    <div class="act"><img class="d m" src="textures/desert-grit.webp" alt="" loading="lazy" decoding="async" width="434" height="206" style="right:-4%;top:-10px;width:min(22vw,300px);opacity:.85"><div class="num">I</div><div class="stack">
       <p>Twenty-six and drifting, Dawn is at King of the Hammers, a desert race where thousands party among neon dune buggies. Three predators pull her away from the crowd: OxyGod, Cy, and Honey. They drug her, take her phone, and start recording.</p>
       <p>Mid-assault, something in Dawn fractures. She kills OxyGod with a violence she barely remembers committing. She comes to at a bus station sink, scrubbing blood off her hands, and vomits up his ringed finger. Not again.</p>
     </div></div>
@@ -243,28 +260,28 @@ footer{padding:40px 20px 70px;text-align:center}
       <p>Dawn tries to build a life on top of what she did. She works at a rest home caring for Iris, the closest thing she has to a mother. She goes back to Grayson, her ex, newly sober. For the first time, they say they love each other. But she left the desert with the wrong phone, and Cy and Honey want it back.</p>
     </div></div>
 
-    <div class="act"><div class="num">III</div><div class="stack">
+    <div class="act"><img class="d m" src="textures/amber-sparks.webp" alt="" loading="lazy" decoding="async" width="397" height="275" style="right:-3%;top:-20px;width:min(21vw,280px)"><div class="num">III</div><div class="stack">
       <p>Dawn reaches for something normal. She applies for jobs at the mall, and the attempt only sharpens her alienation.</p>
       <p>She trades in Honey's phone at a store there. Cy and Honey track it and murder the clerk who took it. Dawn spots them and stays out of sight.</p>
       <p>They pull a fire alarm, plunge the mall into chaos, and ransack their way out. Nez races to the scene. Dawn barely slips away. Cy and Honey vanish. Nez closes in, step by step.</p>
     </div></div>
 
-    <div class="act"><div class="num">IV</div><div class="stack">
+    <div class="act"><img class="d" src="textures/ash-and-fiber.webp" alt="" loading="lazy" decoding="async" width="1713" height="59" style="left:-6%;bottom:-40px;width:112%;opacity:.95"><div class="num">IV</div><div class="stack">
       <p>Cy and Honey connect Dawn to Iris. Iris stalls them with tea, a cigarette, and a story about the daughter she abandoned, buying Dawn time. They kill her for it.</p>
       <p>Dawn is arrested at the murder scene. Cy and Honey abduct Grayson in his own truck and kill him minutes later. In the interrogation room, Dawn's reflection stops matching her, and Shade speaks in the voices of everyone who broke her, ending with her father's: "Why do you think your mother left."</p>
     </div></div>
 
-    <div class="act"><div class="num">V</div><div class="stack">
+    <div class="act"><img class="d m" src="textures/oil-slick.webp" alt="" loading="lazy" decoding="async" width="464" height="216" style="right:-4%;top:-30px;width:min(26vw,340px);opacity:.55"><img class="d m" src="textures/charred-corner.webp" alt="" loading="lazy" decoding="async" width="523" height="599" style="right:6%;top:-20px;width:min(16vw,190px);transform:rotate(-8deg)"><div class="num">V</div><div class="stack">
       <p>A DNA report lands on Nez's desk. Iris was Dawn's mother, and Iris was the killer he has hunted for decades. He goes to the evidence locker and takes one thing from her possessions: a single black puzzle piece.</p>
       <p>Downstairs, Cy walks into the station and posts Dawn's bail in cash, peeling off a bill with blood on it.</p>
     </div></div>
 
-    <div class="act"><div class="num">VI</div><div class="stack">
+    <div class="act"><img class="d m" src="textures/interrupted-desert-tear.webp" alt="" loading="lazy" decoding="async" width="351" height="814" style="right:4%;top:10%;width:180px;opacity:.95"><div class="num">VI</div><div class="stack">
       <p>Nez reaches the parking lot too late. Cy and Honey drive Dawn into the desert, to a bunker beneath their trailer where a camera and a green screen are already set up. They tie her to a table.</p>
       <p>Then Shade rises. The screams disappear into empty country, heard by nobody.</p>
     </div></div>
 
-    <div class="act"><div class="num">VII</div><div class="stack">
+    <div class="act"><img class="d m" src="textures/blue-black-streaks.webp" alt="" loading="lazy" decoding="async" width="170" height="643" style="right:4%;top:-30px;width:120px"><div class="num">VII</div><div class="stack">
       <p>Nez descends into the bunker. No light. From somewhere in the dark: groans, whimpers, voices that don't sound human anymore. The wet sounds of something still happening.</p>
       <p>He finds what is left of Cy and Honey. Then he finds her. Snarling, weeping, shattered. Something between an animal and a girl.</p>
       <p>He holsters his gun and walks toward her.</p>
@@ -275,7 +292,7 @@ footer{padding:40px 20px 70px;text-align:center}
       <p>Then he lets Shade take him, leaving his badge in the open so his death reads as line of duty and his widow collects the fund.</p>
     </div></div>
 
-    <div class="act"><div class="num">IX</div><div class="stack">
+    <div class="act"><img class="d m" src="textures/underwater-silver.webp" alt="" loading="lazy" decoding="async" width="714" height="307" style="right:-6%;top:-10px;width:min(28vw,360px);opacity:.45"><img class="d m" src="textures/creased-interlock.webp" alt="" loading="lazy" decoding="async" width="653" height="545" style="right:2%;top:0;width:min(15vw,190px);transform:rotate(9deg)"><div class="num">IX</div><div class="stack">
       <p>A bike messenger brings Nez's widow an envelope she is too tired to thank him for. Inside is enough.</p>
       <p>Dawn spits blood into the same bus station sink as before. Her hair is different now. A woman asks if she is okay and she says, sometimes. On the counter beside her ticket sits the puzzle piece.</p>
       <p>She throws her phone away and puts her thumb out on the desert highway. A truck stops and the driver asks where she is going. Dawn considers.</p>
@@ -285,6 +302,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 10. CHARACTER WEB -->
 <section class="page" id="characters">
+  <div class="decor" aria-hidden="true"><img class="d m" src="textures/charcoal-rub.webp" alt="" loading="lazy" decoding="async" width="677" height="376" style="right:-4%;top:10%;width:min(30vw,420px);opacity:.8"><img class="d" src="textures/torn-fiber-seam.webp" alt="" loading="lazy" decoding="async" width="1056" height="147" style="left:0;bottom:0;width:min(100%,1056px);transform:translateY(50%);opacity:.95"></div>
   <div class="inner">
     <div class="tape label">Dawn<br>Treatment<br>Section 1.0</div>
     <h2 class="th"><img class="ti" src="titles/character-web-and-moral-gravity-red.png" alt="Character Web and Moral Gravity" style="width:min(100%,726px)"></h2>
@@ -298,6 +316,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 11. DAWN -->
 <section class="page">
+  <div class="decor" aria-hidden="true"><img class="d m" src="textures/split-at-the-fold.webp" alt="" loading="lazy" decoding="async" width="128" height="411" style="left:6%;top:16%;width:110px;opacity:.95"><img class="d m" src="textures/pinholes.webp" alt="" loading="lazy" decoding="async" width="470" height="370" style="left:3%;bottom:6%;width:min(30vw,380px);opacity:.85"></div>
   <div class="inner right">
     <div class="char">
       <h3 class="th"><img class="ti" src="titles/dawn-red.png" alt="Dawn" style="width:min(100%,234px)"></h3>
@@ -319,6 +338,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 13. SHADE IS NOT A CREATURE -->
 <section class="page">
+  <div class="decor" aria-hidden="true"><img class="d m" src="textures/broken-emulsion.webp" alt="" loading="lazy" decoding="async" width="598" height="332" style="right:-3%;top:4%;width:min(28vw,400px);opacity:.7"><img class="d m" src="textures/torn-collage-spine.webp" alt="" loading="lazy" decoding="async" width="173" height="818" style="right:7%;top:30%;width:120px;opacity:.95"></div>
   <div class="inner">
     <p class="key">Shade is not a creature.<br>She is a frequency.</p>
     <div class="stack" style="font-size:16px">
@@ -336,6 +356,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 14. NEZ -->
 <section class="page">
+  <div class="decor" aria-hidden="true"><img class="d m" src="textures/evidence-tape-tab.webp" alt="" loading="lazy" decoding="async" width="115" height="95" style="left:calc(clamp(20px,7vw,110px) + min(46vw,600px));top:calc(clamp(48px,7vw,96px) - 22px);width:92px;transform:rotate(14deg)"><img class="d" src="textures/tarnished-ink.webp" alt="" loading="lazy" decoding="async" width="1648" height="76" style="left:0;bottom:0;width:100%;transform:translateY(50%);opacity:.95"></div>
   <div class="inner">
     <div class="char">
       <h3 class="th"><img class="ti" src="titles/detective-nez-red.png" alt="Detective Nez" style="width:min(100%,592px)"></h3>
@@ -347,6 +368,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 15. CY + HONEY -->
 <section class="page">
+  <div class="decor" aria-hidden="true"><img class="d m" src="textures/black-cloth-tab.webp" alt="" loading="lazy" decoding="async" width="373" height="143" style="left:4%;top:18%;width:min(28vw,320px);transform:rotate(-7deg)"><img class="d m" src="textures/edge-dust.webp" alt="" loading="lazy" decoding="async" width="525" height="277" style="left:2%;bottom:4%;width:min(36vw,500px);opacity:.9"></div>
   <div class="inner right">
     <div class="char">
       <h3 class="th"><img class="ti" src="titles/cy-and-honey-red.png" alt="Cy + Honey" style="width:min(100%,434px)"></h3>
@@ -362,6 +384,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 16. IRIS -->
 <section class="page">
+  <div class="decor" aria-hidden="true"><img class="d m" src="textures/torn-paper-tab.webp" alt="" loading="lazy" decoding="async" width="267" height="185" style="right:10%;top:16%;width:min(20vw,230px);opacity:.92"><img class="d m" src="textures/silver-frame-patch.webp" alt="" loading="lazy" decoding="async" width="215" height="140" style="right:calc(10% + 120px);top:calc(16% - 30px);width:min(15vw,180px);transform:rotate(-9deg)"></div>
   <div class="inner">
     <div class="char">
       <h3 class="th"><img class="ti" src="titles/iris-red.png" alt="Iris" style="width:min(100%,143px)"></h3>
@@ -374,6 +397,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 17. GRAYSON -->
 <section class="page">
+  <div class="decor" aria-hidden="true"><img class="d m" src="textures/dry-wall-dust.webp" alt="" loading="lazy" decoding="async" width="439" height="295" style="right:4%;top:10%;width:min(36vw,440px)"></div>
   <div class="inner">
     <div class="char">
       <h3 class="th"><img class="ti" src="titles/grayson-red.png" alt="Grayson" style="width:min(100%,363px)"></h3>
@@ -385,6 +409,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 18. APPROACH -->
 <section class="page" id="approach">
+  <div class="decor" aria-hidden="true"><img class="d" src="textures/corner-crazing.webp" alt="" loading="lazy" decoding="async" width="446" height="328" style="right:0;top:0;width:min(36vw,446px);opacity:.95"></div>
   <div class="inner">
     <h2 class="th"><img class="ti" src="titles/approach-red.png" alt="Approach" style="width:min(100%,419px)"></h2>
     <div class="stack mono">
@@ -401,6 +426,7 @@ footer{padding:40px 20px 70px;text-align:center}
 </section>
 
 <section class="page">
+  <div class="decor" aria-hidden="true"><img class="d m" src="textures/scraped-negative.webp" alt="" loading="lazy" decoding="async" width="522" height="114" style="right:-3%;top:26%;width:min(28vw,380px);opacity:.9"><img class="d m" src="textures/cracked-film-tab.webp" alt="" loading="lazy" decoding="async" width="354" height="170" style="right:5%;top:calc(clamp(48px,7vw,96px) - 14px);width:170px;transform:rotate(-4deg)"></div>
   <div class="inner">
     <div class="stack mono">
       <p class="eyebrow">Camera.</p>
@@ -413,6 +439,7 @@ footer{padding:40px 20px 70px;text-align:center}
 </section>
 
 <section class="page">
+  <div class="decor" aria-hidden="true"><img class="d" src="textures/coal-ripples.webp" alt="" loading="lazy" decoding="async" width="1582" height="72" style="left:0;bottom:0;width:100%;transform:translateY(50%)"></div>
   <div class="inner">
     <div class="stack mono">
       <p class="eyebrow">Sound &amp; music.</p>
@@ -425,6 +452,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 21. THE WORLD -->
 <section class="page">
+  <div class="decor" aria-hidden="true"><img class="d" src="textures/broken-horizontal-join.webp" alt="" loading="lazy" decoding="async" width="1924" height="189" style="left:0;top:0;width:100%;transform:translateY(-50%);opacity:.95"><img class="d m" src="textures/edge-dust.webp" alt="" loading="lazy" decoding="async" width="525" height="277" style="left:3%;bottom:10%;width:min(34vw,460px);opacity:.85;transform:scaleX(-1) rotate(4deg)"></div>
   <div class="inner right">
     <div class="stack mono">
       <p>The city in Dawn is an anonymous sprawl, industrial and worn, built from concrete, rust, and asphalt. Every surface feels stained, every corner carrying the residue of lives pressed too close together.</p>
@@ -437,6 +465,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 22. COLOR -->
 <section class="page">
+  <div class="decor" aria-hidden="true"><img class="d m" src="textures/olive-patina.webp" alt="" loading="lazy" decoding="async" width="502" height="566" style="left:-2%;top:2%;width:min(46vw,520px);opacity:.6"><img class="d m" src="textures/vertical-paper-split.webp" alt="" loading="lazy" decoding="async" width="109" height="805" style="right:8%;top:8%;width:96px;opacity:.95"></div>
   <div class="inner">
     <p class="mono">Color in Dawn is less design than pulse, the temperature of her world. Steel blues, tobacco yellows, and jaundiced greens cling like residue from a life that won't wash clean. Skin tones are warm by comparison, but only faintly, drained by the darkness around them. What is left is human vulnerability against an oppressive environment.</p>
     <p class="mono">Memories pull us under into inky navy and misty silver, their surfaces fractured, reflecting grief back in warped fragments. In the end a trace of warmth seeps in. Not enough to promise salvation, but enough to suggest she finally sees herself.</p>
@@ -446,6 +475,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 23. SCOPE -->
 <section class="page" id="scope">
+  <div class="decor" aria-hidden="true"><img class="d m" src="textures/heat-bloom.webp" alt="" loading="lazy" decoding="async" width="508" height="182" style="right:3%;top:10%;width:min(42vw,508px);opacity:.9"></div>
   <div class="inner">
     <h2 class="display sm">Built to be made</h2>
     <div class="stack mono">
@@ -460,6 +490,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 24. COMPS -->
 <section class="page" id="comps">
+  <div class="decor" aria-hidden="true"><img class="d" src="textures/fold-wear.webp" alt="" loading="lazy" decoding="async" width="762" height="85" style="left:0;top:0;width:min(100%,762px);transform:translateY(-50%);opacity:.95"></div>
   <div class="inner">
     <h2 class="display sm">Made for $5M<br>or less</h2>
     <p class="mono">The films that have defined horror's last fifteen years share a profile: a small budget, contained production, and a human wound at the center of the fear. Dawn is built on the same profile. It trades a creature budget for performance and in-camera technique, keeps its story in controllable locations, and gets its one sequence of scale from a real event.</p>
@@ -511,10 +542,11 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 26-27. TEAM -->
 <section class="page" id="team">
+  <div class="decor" aria-hidden="true"><img class="d" src="textures/slate-shadows.webp" alt="" loading="lazy" decoding="async" width="1283" height="155" style="left:50%;bottom:0;width:min(100%,1283px);transform:translateX(-50%) scaleX(-1);opacity:.7"></div>
   <div class="inner" style="gap:60px">
     <h2 class="th"><img class="ti" src="titles/the-team-red.png" alt="The Team" style="width:min(100%,378px)"></h2>
     <div class="two">
-      <div class="stack paper">
+      <div class="stack paper"><img class="d m" src="textures/embossed-gray-tape.webp" alt="" loading="lazy" decoding="async" width="341" height="158" style="right:4%;bottom:-46px;width:160px;transform:rotate(3deg)">
         <h3 class="th"><img class="ti" src="titles/noah-conopask-red.png" alt="Noah Conopask" style="width:min(100%,645px)"></h3>
         <p class="eyebrow">Director. Story by.</p>
         <p class="mono" style="font-size:14px">Noah Conopask brings more than twenty years of commercial filmmaking to Dawn, not as a stepping stone but as a foundation. His work for Nike, BMW, HOKA, Red Bull, and Patr&oacute;n is built on telling complete, emotionally precise stories in compressed time, with no margin for error. He is Emmy-nominated for main title design, and his work has been honored by the Clios and Ciclope. He knows how to run a set, work with actors under pressure, and execute a specific visual idea exactly as imagined.</p>
@@ -522,7 +554,7 @@ footer{padding:40px 20px 70px;text-align:center}
         <p class="mono" style="font-size:14px">His short film ABSORBER, which he wrote, directed, and scored, premiered at LA Shorts International Film Festival and is the direct creative bridge to Dawn. It demonstrates the register this film demands: a world where interior experience becomes exterior horror, and the supernatural and the human are indistinguishable.</p>
         <p class="mono" style="font-size:14px">Watch ABSORBER: <span class="todo">link</span><br>Reel: <a href="https://noah.tv">noah.tv</a></p>
       </div>
-      <div class="stack paper">
+      <div class="stack paper"><img class="d m" src="textures/silver-bumper-tab.webp" alt="" loading="lazy" decoding="async" width="248" height="140" style="left:2%;bottom:-120px;width:140px;transform:rotate(-4deg)">
         <h3 class="th"><img class="ti" src="titles/seth-renshaw-red.png" alt="Seth Renshaw" style="width:min(100%,598px)"></h3>
         <p class="eyebrow">Writer &amp; Producer</p>
         <p class="mono" style="font-size:14px">After writing his first feature and setting it up at Scott Free, Seth worked with Werner Herzog on Benaroya Pictures' QUEEN OF THE DESERT and executive produced a series of features as Benaroya's Director of Development. He is in prep on a Kristallnacht film to be directed by Oscar winner Stefan Ruzowitzky and a no-dialogue thriller shooting next year. He has written multiple features and a TV pilot with Anonymous Content, and serves as EP on several features in development.</p>
@@ -540,6 +572,7 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 28. STATUS -->
 <section class="page" id="status">
+  <div class="decor" aria-hidden="true"><img class="d" src="textures/frayed-bottom-edge.webp" alt="" loading="lazy" decoding="async" width="1023" height="78" style="right:0;bottom:0;width:min(100%,1023px);transform:translateY(50%);opacity:.95"></div>
   <div class="inner">
     <h2 class="display sm">Where we are</h2>
     <dl>
@@ -556,13 +589,14 @@ footer{padding:40px 20px 70px;text-align:center}
 
 <!-- 29. CONTACT -->
 <section class="page">
+  <div class="decor" aria-hidden="true"><img class="d m" src="textures/burnt-paper-contour.webp" alt="" loading="lazy" decoding="async" width="232" height="760" style="right:6%;top:-10%;width:130px;opacity:.9"></div>
   <div class="inner center">
     <p class="spaced">Contact</p>
     <p class="mono"><span class="todo">Name, email, phone for Noah and/or Seth</span></p>
   </div>
 </section>
 
-<footer>
+<footer style="position:relative;z-index:2">
   <p class="eyebrow" style="max-width:none">Dawn &middot; A film by Noah Conopask &middot; MMXXVI</p>
 </footer>
 
