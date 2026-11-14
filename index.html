@@ -114,7 +114,10 @@ dd{margin:0}
 .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:40px 60px;align-items:start}
 .name{font-family:var(--mono);font-weight:300;letter-spacing:.5em;text-transform:uppercase;font-size:clamp(20px,3.4vw,34px);margin:0}
 .th{margin:0;line-height:0;font-size:0}
-.ti{display:block;height:auto;max-width:100%}
+.ti{display:block;height:auto;max-width:100%;transform-origin:left center}
+.th{padding:12px 0}
+.inner.center .ti{transform-origin:center}
+.inner.right .ti{transform-origin:right center}
 .inner.center .ti{margin:0 auto}
 .key{font-family:var(--serif);color:var(--blood);font-size:clamp(26px,3.6vw,42px);line-height:1.28;letter-spacing:.005em;text-wrap:balance}
 .key u{text-decoration-thickness:1px;text-underline-offset:.12em}
@@ -160,7 +163,7 @@ footer{padding:40px 20px 70px;text-align:center}
   <div class="decor" aria-hidden="true"><img class="d" src="textures/underwater-silver.webp" alt="" loading="lazy" decoding="async" width="714" height="307" style="right:2%;top:14%;width:min(62vw,714px);opacity:.6"><img class="d" src="textures/folded-silver-tape.webp" alt="" loading="lazy" decoding="async" width="287" height="139" style="right:4%;top:-14px;width:min(30vw,210px);transform:rotate(5deg)"><img class="d m" src="textures/cover-silver-tab.webp" alt="" loading="lazy" decoding="async" width="109" height="91" style="left:6px;bottom:26%;width:70px;transform:rotate(-10deg)"></div>
   <div class="inner right">
     <p class="eyebrow" style="text-align:right">Director's Treatment</p>
-    <h1 class="th" style="width:100%;max-width:none"><img class="ti" src="titles/dawn-title.png" alt="DAWN" style="width:min(100%,560px);margin-left:auto"></h1>
+    <h1 class="th" style="width:100%;max-width:none"><img class="ti" src="titles/dawn-title.png" alt="DAWN" style="width:min(100%,560px);margin-left:auto;transform:rotate(-1.2deg)"></h1>
     <p class="spaced" style="text-align:right">A film by Noah Conopask</p>
   </div>
   <div class="inner" style="margin-top:70px">
@@ -242,7 +245,7 @@ footer{padding:40px 20px 70px;text-align:center}
 <section class="page">
   <div class="decor" aria-hidden="true"><img class="d m" src="textures/oxidized-paper.webp" alt="" loading="lazy" decoding="async" width="495" height="509" style="right:5%;top:8%;width:min(34vw,420px);opacity:.55"></div>
   <div class="inner">
-    <h2 class="th"><img class="ti" src="titles/premise-red.png" alt="Premise" style="width:min(100%,357px)"></h2>
+    <h2 class="th"><img class="ti" src="titles/premise-red.png" alt="Premise" style="width:min(100%,357px);transform:rotate(1.6deg)"></h2>
     <div class="stack">
       <p>Dawn was hurt as a child. When she is hurt again, something in her hurts back.</p>
       <p class="key">Victim becomes predator.</p>
@@ -263,7 +266,7 @@ footer{padding:40px 20px 70px;text-align:center}
 <!-- 9. SYNOPSIS -->
 <section class="page" id="synopsis">
   <div class="inner" style="gap:54px">
-    <h2 class="th"><img class="ti" src="titles/synopsis-red.png" alt="Synopsis" style="width:min(100%,384px)"></h2>
+    <h2 class="th"><img class="ti" src="titles/synopsis-red.png" alt="Synopsis" style="width:min(100%,384px);transform:rotate(-1.1deg)"></h2>
 
     <div class="syn-grid"><div class="syn-text"><div class="act"><div class="num">I</div><div class="stack">
       <p>Twenty-six and drifting, Dawn is at King of the Hammers, a desert race where thousands party among neon dune buggies. Three predators pull her away from the crowd: OxyGod, Cy, and Honey. They drug her, take her phone, and start recording.</p>
@@ -320,7 +323,7 @@ footer{padding:40px 20px 70px;text-align:center}
 <section class="page" id="characters">
   <div class="decor" aria-hidden="true"><img class="d m" src="textures/charcoal-rub.webp" alt="" loading="lazy" decoding="async" width="677" height="376" style="right:-4%;top:10%;width:min(30vw,420px);opacity:.8"><img class="d" src="textures/torn-fiber-seam.webp" alt="" loading="lazy" decoding="async" width="1056" height="147" style="left:0;bottom:0;width:min(100%,1056px);transform:translateY(50%);opacity:.95"></div>
   <div class="inner">
-    <h2 class="th"><img class="ti" src="titles/characters-red.png" alt="Characters" style="width:min(100%,545px)"></h2>
+    <h2 class="th"><img class="ti" src="titles/characters-red.png" alt="Characters" style="width:min(100%,545px);transform:rotate(-0.9deg)"></h2>
     <p class="mono">The film depends on its characters. I want the audience to connect with each of them through their flaws, including Cy and Honey, who are monstrous and also funny.</p>
     <div style="display:flex;flex-wrap:wrap;gap:18px;margin-top:10px">
       <div class="tape label">People<br>leave marks.</div>
@@ -333,7 +336,7 @@ footer{padding:40px 20px 70px;text-align:center}
   <div class="decor" aria-hidden="true"><img class="d photo" src="refs/42bb3db8.webp" alt="" loading="lazy" decoding="async" width="1100" height="458" style="left:-7vw;top:4%;width:clamp(480px,60vw,840px);transform:rotate(-3.2deg)"><img class="d m" src="textures/split-at-the-fold.webp" alt="" loading="lazy" decoding="async" width="128" height="411" style="left:6%;top:16%;width:110px;opacity:.95"><img class="d m" src="textures/pinholes.webp" alt="" loading="lazy" decoding="async" width="470" height="370" style="left:3%;bottom:6%;width:min(30vw,380px);opacity:.85"></div>
   <div class="inner right">
     <div class="char">
-      <h3 class="th"><img class="ti" src="titles/dawn-red.png" alt="Dawn" style="width:min(100%,234px)"></h3>
+      <h3 class="th"><img class="ti" src="titles/dawn-red.png" alt="Dawn" style="width:min(100%,234px);transform:rotate(2.1deg)"></h3>
       <p>Dawn is twenty-six and far too thin, and she kills people, even when she doesn't want to. She was born carrying something, and what was done to her as a child let it out. She is both victim and abuser, torn between wanting a normal life and being drawn to danger. Her past comes out through what she does in the present, and it points toward her own death. Or something worse.</p>
       <p>We need an actress who can play 26 and hold the screen in near silence. She should not be conventionally sympathetic. The audience follows her because they can't look away. Reference performances: Rooney Mara in <em>The Girl with the Dragon Tattoo</em>, Jessie Buckley in <em>Beast</em>, Isabelle Adjani in <em>Possession</em>. Each plays a damaged woman with her whole body.</p>
     </div>
@@ -343,7 +346,7 @@ footer{padding:40px 20px 70px;text-align:center}
 <!-- 12. SHADE -->
 <section class="page">
   <div class="inner center">
-    <h3 class="th"><img class="ti" src="titles/shade-diffused-red.png" alt="Shade" style="width:min(100%,314px)"></h3>
+    <h3 class="th"><img class="ti" src="titles/shade-diffused-red.png" alt="Shade" style="width:min(100%,314px);transform:rotate(-1.7deg)"></h3>
     <p>The dark gift, given a shape by childhood trauma.</p>
     <p>She is who Dawn becomes when the past takes over.</p>
     <p>Dawn sees her first in reflections and hears her as the voices of the people who hurt her.</p>
@@ -387,7 +390,7 @@ footer{padding:40px 20px 70px;text-align:center}
   <div class="decor" aria-hidden="true"><img class="d photo" src="refs/985ef0c8.webp" alt="" loading="lazy" decoding="async" width="1100" height="460" style="right:-7vw;top:6%;width:clamp(480px,60vw,840px);transform:rotate(2.4deg)"><img class="d m" src="textures/evidence-tape-tab.webp" alt="" loading="lazy" decoding="async" width="115" height="95" style="left:calc(clamp(20px,7vw,110px) + min(46vw,600px));top:calc(clamp(48px,7vw,96px) - 22px);width:92px;transform:rotate(14deg)"><img class="d" src="textures/tarnished-ink.webp" alt="" loading="lazy" decoding="async" width="1648" height="76" style="left:0;bottom:0;width:100%;transform:translateY(50%);opacity:.95"></div>
   <div class="inner">
     <div class="char">
-      <h3 class="th"><img class="ti" src="titles/detective-nez-red.png" alt="Detective Nez" style="width:min(100%,592px)"></h3>
+      <h3 class="th"><img class="ti" src="titles/detective-nez-red.png" alt="Detective Nez" style="width:min(100%,592px);transform:rotate(0.8deg)"></h3>
       <p class="mono">Nez is a detective somewhere between 40 and 55. He has spent decades following impossible killings, and the trail now leads to Dawn. He does not say a word we can hear until the last minutes of the film. He is a good tracker and an absent father, and he is looking for some kind of deliverance. He was something else before he was a detective. Nobody around him knows what, and the film never says. He is the film's clock: Dawn repeats herself, and Nez moves toward one ending.</p>
       <p class="mono">We want an actor who can carry a film on his face and make a few lines count. The kind of American face that belongs on a highway at 3am.</p>
     </div>
@@ -399,7 +402,7 @@ footer{padding:40px 20px 70px;text-align:center}
   <div class="decor" aria-hidden="true"><img class="d photo" src="refs/95774da7.webp" alt="" loading="lazy" decoding="async" width="1100" height="595" style="left:-8vw;top:-4%;width:clamp(440px,52vw,760px);transform:rotate(-1.6deg)"><img class="d photo m" src="refs/2e4f3e62.webp" alt="" loading="lazy" decoding="async" width="1100" height="462" style="left:-4vw;top:calc(-4% + 22vw);width:clamp(400px,44vw,660px);transform:rotate(3.4deg)"><img class="d m" src="textures/black-cloth-tab.webp" alt="" loading="lazy" decoding="async" width="373" height="143" style="left:calc(clamp(440px,52vw,760px) - 8vw - 175px);top:calc(-4% - 22px);width:230px;transform:rotate(32deg);z-index:1"><img class="d m" src="textures/edge-dust.webp" alt="" loading="lazy" decoding="async" width="525" height="277" style="left:2%;bottom:4%;width:min(36vw,500px);opacity:.9"></div>
   <div class="inner right">
     <div class="char">
-      <h3 class="th"><img class="ti" src="titles/cy-and-honey-red.png" alt="Cy + Honey" style="width:min(100%,434px)"></h3>
+      <h3 class="th"><img class="ti" src="titles/cy-and-honey-red.png" alt="Cy + Honey" style="width:min(100%,434px);transform:rotate(-1.4deg)"></h3>
       <div style="display:grid;gap:8px;justify-items:start">
         <div class="tape">Cy and Honey live in a trailer in the desert. They want revenge for OxyGod, and they want the phone back because it holds evidence of their crimes.</div>
         <div class="tape">Mickey and Mallory from NATURAL BORN KILLERS, with worse manners.</div>
@@ -414,7 +417,7 @@ footer{padding:40px 20px 70px;text-align:center}
   <div class="decor" aria-hidden="true"><img class="d photo" src="refs/4960fc71.webp" alt="" loading="lazy" decoding="async" width="1100" height="461" style="right:-6vw;top:4%;width:clamp(480px,60vw,840px);transform:rotate(2.8deg)"><img class="d m" src="textures/silver-frame-patch.webp" alt="" loading="lazy" decoding="async" width="215" height="140" style="right:calc(clamp(480px,60vw,840px) - 6vw - 95px);top:calc(4% - 38px);width:170px;transform:rotate(-38deg);z-index:1"></div>
   <div class="inner">
     <div class="char">
-      <h3 class="th"><img class="ti" src="titles/iris-red.png" alt="Iris" style="width:min(100%,143px)"></h3>
+      <h3 class="th"><img class="ti" src="titles/iris-red.png" alt="Iris" style="width:min(100%,143px);transform:rotate(2.4deg)"></h3>
       <p>Iris is an old woman in a rest home whose mind is starting to slip. She is sharper than anyone there gives her credit for.</p>
       <p>Dawn's closest relationship is with her. Iris insisted on Dawn as her aide, and she holds a secret that could save Dawn or ruin her.</p>
       <p>We want an actress of real stature, a face the audience already trusts, so that losing her hurts. She should be old enough to know what this woman is carrying.</p>
@@ -427,7 +430,7 @@ footer{padding:40px 20px 70px;text-align:center}
   <div class="decor" aria-hidden="true"><img class="d photo" src="refs/a06f4ea8.webp" alt="" loading="lazy" decoding="async" width="1100" height="595" style="right:-7vw;top:4%;width:clamp(480px,60vw,840px);transform:rotate(-2.5deg)"><img class="d m" src="textures/dry-wall-dust.webp" alt="" loading="lazy" decoding="async" width="439" height="295" style="right:4%;top:10%;width:min(36vw,440px)"></div>
   <div class="inner">
     <div class="char">
-      <h3 class="th"><img class="ti" src="titles/grayson-red.png" alt="Grayson" style="width:min(100%,363px)"></h3>
+      <h3 class="th"><img class="ti" src="titles/grayson-red.png" alt="Grayson" style="width:min(100%,363px);transform:rotate(-0.7deg)"></h3>
       <p class="mono">Grayson is Dawn's on-and-off boyfriend. He has traded drugs for construction work and is trying to start over. He is familiar and kind, and he has a temper. She knows better than to trust him, and she goes to him anyway.</p>
       <p class="mono">We need an actor who makes it clear why she keeps going back: handsome in a worn-down way, with charm and danger in the same face.</p>
     </div>
@@ -438,7 +441,7 @@ footer{padding:40px 20px 70px;text-align:center}
 <section class="page" id="approach">
   <div class="decor" aria-hidden="true"><img class="d" src="textures/corner-crazing.webp" alt="" loading="lazy" decoding="async" width="446" height="328" style="right:0;top:0;width:min(36vw,446px);opacity:.95"></div>
   <div class="inner">
-    <h2 class="th"><img class="ti" src="titles/approach-red.png" alt="Approach" style="width:min(100%,419px)"></h2>
+    <h2 class="th"><img class="ti" src="titles/approach-red.png" alt="Approach" style="width:min(100%,419px);transform:rotate(1.3deg)"></h2>
     <div class="stack mono">
       <p>The approach is restraint. We show little and let the audience fill in the rest.</p>
       <p>The script works this way: nearly every killing happens offscreen, and we cut back to what it left behind.</p>
@@ -500,22 +503,22 @@ footer{padding:40px 20px 70px;text-align:center}
 <section class="page">
   <div class="decor" aria-hidden="true"><img class="d ref l" src="refs/e3ab2250.webp" alt="" loading="lazy" decoding="async" width="1100" height="463" style="left:-4vw;top:0;width:clamp(300px,36vw,560px)"><img class="d ref l m" src="refs/ae0a462d.webp" alt="" loading="lazy" decoding="async" width="1100" height="457" style="left:-2vw;bottom:2%;width:clamp(300px,38vw,600px)"><img class="d" src="textures/broken-horizontal-join.webp" alt="" loading="lazy" decoding="async" width="1924" height="189" style="left:0;top:0;width:100%;transform:translateY(-50%);opacity:.95"><img class="d m" src="textures/edge-dust.webp" alt="" loading="lazy" decoding="async" width="525" height="277" style="left:3%;bottom:10%;width:min(34vw,460px);opacity:.85;transform:scaleX(-1) rotate(4deg)"></div>
   <div class="inner right">
+    <h2 class="th"><img class="ti" src="titles/the-world-red.png" alt="The World" style="width:min(100%,423px);transform:rotate(-1.9deg)"></h2>
     <div class="stack mono">
       <p>The city is an anonymous sprawl of concrete and rust, and every surface looks stained.</p>
       <p>The suburbs are no better: parched lawns, drawn blinds, and decay behind a tidy front.</p>
       <p>Past both is the desert, empty and indifferent, where the worst of it happens.</p>
     </div>
   </div>
-  <div class="inner" style="margin-top:50px"><h2 class="th"><img class="ti" src="titles/the-world-red.png" alt="The World" style="width:min(100%,423px)"></h2></div>
 </section>
 
 <!-- 22. COLOR -->
 <section class="page">
   <div class="decor" aria-hidden="true"><img class="d m" src="textures/olive-patina.webp" alt="" loading="lazy" decoding="async" width="502" height="566" style="left:-2%;top:2%;width:min(46vw,520px);opacity:.6"></div>
   <div class="inner">
+    <h2 class="th"><img class="ti" src="titles/color-red.png" alt="Color" style="width:min(100%,254px);transform:rotate(1.1deg)"></h2>
     <p class="mono">The palette is steel blue and tobacco yellow, with a sickly green at the edges, the colors of a life that won't wash clean. Skin tones are slightly warmer than everything around them and drained by the dark.</p>
     <p class="mono">Memories go to deep navy and silver, with fractured, warped surfaces like the lake. By the end a little warmth comes into the frame. It does not promise a good outcome. It suggests Dawn can finally look at herself.</p>
-    <h2 class="th" style="margin-top:30px"><img class="ti" src="titles/color-red.png" alt="Color" style="width:min(100%,254px)"></h2>
   </div>
 </section>
 
@@ -593,10 +596,10 @@ footer{padding:40px 20px 70px;text-align:center}
 <section class="page" id="team">
   <div class="decor" aria-hidden="true"><img class="d" src="textures/slate-shadows.webp" alt="" loading="lazy" decoding="async" width="1283" height="155" style="left:50%;bottom:0;width:min(100%,1283px);transform:translateX(-50%) scaleX(-1);opacity:.7"></div>
   <div class="inner" style="gap:60px">
-    <h2 class="th"><img class="ti" src="titles/the-team-red.png" alt="The Team" style="width:min(100%,378px)"></h2>
+    <h2 class="th"><img class="ti" src="titles/the-team-red.png" alt="The Team" style="width:min(100%,378px);transform:rotate(-1.5deg)"></h2>
     <div class="two">
       <div class="stack paper">
-        <h3 class="th"><img class="ti" src="titles/noah-conopask-red.png" alt="Noah Conopask" style="width:min(100%,645px)"></h3>
+        <h3 class="th"><img class="ti" src="titles/noah-conopask-red.png" alt="Noah Conopask" style="width:min(100%,645px);transform:rotate(0.6deg)"></h3>
         <p class="eyebrow">Director. Story by.</p>
         <p class="mono" style="font-size:14px">Noah Conopask has directed commercials for more than twenty years, for clients including Nike, BMW, HOKA, Red Bull, and Patr&oacute;n. The work tells a complete story in a short time with no room for error. He is Emmy-nominated for main title design, and his work has been honored by the Clios and Ciclope. He knows how to run a set and work with actors under pressure.</p>
         <p class="mono" style="font-size:14px">His style is precise, with deliberate movement and rhythm, and he has a strong eye for faces and the way people move.</p>
@@ -604,7 +607,7 @@ footer{padding:40px 20px 70px;text-align:center}
         <p class="mono" style="font-size:14px">Watch ABSORBER: <span class="todo">link</span><br>Reel: <a href="https://noah.tv">noah.tv</a></p>
       </div>
       <div class="stack paper">
-        <h3 class="th"><img class="ti" src="titles/seth-renshaw-red.png" alt="Seth Renshaw" style="width:min(100%,598px)"></h3>
+        <h3 class="th"><img class="ti" src="titles/seth-renshaw-red.png" alt="Seth Renshaw" style="width:min(100%,598px);transform:rotate(-1.0deg)"></h3>
         <p class="eyebrow">Writer &amp; Producer</p>
         <p class="mono" style="font-size:14px">After writing his first feature and setting it up at Scott Free, Seth worked with Werner Herzog on Benaroya Pictures' QUEEN OF THE DESERT and executive produced a series of features as Benaroya's Director of Development. He is in prep on a Kristallnacht film to be directed by Oscar winner Stefan Ruzowitzky and a no-dialogue thriller shooting next year. He has written multiple features and a TV pilot with Anonymous Content, and serves as EP on several features in development.</p>
       </div>
